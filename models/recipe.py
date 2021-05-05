@@ -1,15 +1,13 @@
 from abc import ABC
-from abc import abstractmethod
 
 
-class Breakfast(ABC):
+class Recipe(ABC):
 
     def __init__(self, name, number_of_dishes, caloric):
         self._name = name
         self.number_of_dishes = number_of_dishes
         self._caloric = caloric
 
-    @abstractmethod
     def __str__(self):
         pass
 

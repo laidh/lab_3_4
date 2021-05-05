@@ -1,17 +1,19 @@
-from .breakfast import Breakfast
+from .recipe import Recipe
 
 
-class Drinks(Breakfast):
+class Drinks(Recipe):
     def __init__(self, name, number_of_dishes, caloric,
-                 drink):
-        Breakfast.__init__(self, name, number_of_dishes, caloric)
+                 drink, volume):
+        Recipe.__init__(self, name, number_of_dishes, caloric)
         self.__drink = drink
+        self.__volume = volume
 
     def __str__(self):
         return f"In drink {self._name} there are "\
-              f"{self.number_of_dishes} dishes.\nAverage caloric is "\
-              f"{self._caloric}.\nhe name of the dish is "\
-              f"{self.__drink.name}."\
+              f"{self.number_of_dishes} drinks.\nAverage caloric is "\
+              f"{self._caloric}.\nhe name of the drink is "\
+              f"{self.__drink.name}. \nAnd volume: "\
+              f"{self.__volume} litres."\
               f"\n"\
 
 
@@ -20,3 +22,9 @@ class Drinks(Breakfast):
 
     def set_drink(self, drink):
         self.__drink = drink
+
+    def get_volume(self):
+        return self.__volume
+
+    def set_volume(self, volume):
+        self.__volume = volume

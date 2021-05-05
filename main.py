@@ -3,26 +3,25 @@ from managers import *
 
 
 def main():
-    a = Dishes("lunch", 2, 5000, Dish.COTTAGE_CHEESE)
-    b = Product("lunch", 1, 1000, 5, "Dobryana")
-    c = Drinks("lunch", 3, 800, Drink.MILK,)
+    dessert = Dishes("super Lunch", 2, 5000, Dish.COTTAGE_CHEESE, 500)
+    shakes = Drinks("Triple Milkshake", 3, 800, Drink.MILK, 2)
 
-    l_dbac = [b, c, a]
-    f = ShopManager(l_dbac)
+    all_objects = [shakes, dessert]
+    manager = ShopManager(all_objects)
 
-    out = f.sort_by_caloric(SortOrder.ASC)
+    out = manager.sort_by_caloric(SortOrder.ASC)
     for i in out:
         print(i)
     print("___________________________________________________")
     print("\n")
 
-    out = f.sort_by_number_of_dishes(SortOrder.DESC)
+    out = manager.sort_by_number_of_dishes(SortOrder.DESC)
     for i in out:
         print(i)
     print("___________________________________________________")
     print("\n")
 
-    out = f.search_by_number_of_dishes(3)
+    out = manager.search_by_number_of_dishes(3)
     for i in out:
         print(i)
     print("___________________________________________________")
